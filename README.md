@@ -5,22 +5,28 @@ This is a simple implementation of a UNIX command line interpreter. The shell ca
 Information
 
 Output
+
 Unless specified otherwise, your program must have the exact same output as sh (/bin/sh) as well as the exact same error output.
 The only difference is when you print an error, the name of the program must be equivalent to your argv[0] (See below)
 
 Example of error with sh:
+
 $ echo "Ian" | /bin/sh
 /bin/sh: 1: qwerty: not found
 $ echo "Ian" | /bin/../bin/sh
 /bin/../bin/sh: 1: qwerty: not found
 $
+
 Same error with our program hsh:
+
 $ echo "kanneh" | ./hsh
 ./hsh: 1: qwerty: not found
 $ echo "kanneh" | ./././hsh
 ./././hsh: 1: qwerty: not found
 $
+
 List of functions and system calls we used
+
 - access (man 2 access)
 - chdir (man 2 chdir)
 - close (man 2 close)
@@ -51,11 +57,15 @@ List of functions and system calls we used
 - wait3 (man 2 wait3)
 - wait4 (man 2 wait4)
 - write (man 2 write)
-Project Compilation
-You can compile our shell using:
+
+How the Project is Compiled
+
+We compile our shell using:
 
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+
 Testing
+
 Our shell should work like this in interactive mode:
 
 $ ./hsh
@@ -64,7 +74,9 @@ hsh main.c shell.c
 ($)
 ($) exit
 $
+
 Also in non-interactive mode:
+
 $ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
 $
@@ -76,8 +88,11 @@ $ cat test_ls_2 | ./hsh
 hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
+
 The Project's Implementation in Review
+
 Submission requirements:
+
 Write a beautiful code that passes the Betty checks
 Write a UNIX command line interpreter.
 Functionalities
@@ -91,3 +106,8 @@ We will handle errors, including the “end of file” condition (Ctrl+D)
 Using the man_1_simple_shell page
 Display the page
  man ./man_1_simple_shell
+ 
+Contributors
+
+Rasheedat Olufunke Yusuf (yrasheedat12@gmail.com)
+Cheick Ahmed Touré ()
